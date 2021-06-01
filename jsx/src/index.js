@@ -2,23 +2,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-if (module.hot) {
-    module.hot.accept();
-}
-
 // Create a react component
 const App = () => {
-    const buttonText = 'Click Me!';
+    const buttonText = { text: 'Click Me!' };
+    const labelText = 'Enter name: ';
 
     return (
         <div>
-            <label className="label" for="name">
-                Hello React-World! Ready?
+            <label className="label" htmlFor="name">
+                {labelText}
             </label>
-
             <input id="name" type="text" />
-            <button style={{ backgroundColor: 'black', color: 'white' }}>
-                {buttonText}
+            <button style={{ backgroundColor: '#2e9fe6', color: 'white' }}>
+                {buttonText.text}
             </button>
         </div>
     );

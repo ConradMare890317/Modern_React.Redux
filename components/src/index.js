@@ -12,37 +12,58 @@ if (module.hot) {
 const App = () => {
     return (
         <div className="ui container comments">
-            <ApprovalCard />
-            <CommentDetail
-                author="Conrad"
-                timeAgo="Today at 16:00"
-                content="Hello"
-                avatar={faker.image.avatar()}
-            />
-            <CommentDetail
-                author="Phil"
-                timeAgo="Today at 16:30"
-                content="React"
-                avatar={faker.image.avatar()}
-            />
-            <CommentDetail
-                author="Mariaan"
-                timeAgo="Yesterday at 12:00"
-                content="World!"
-                avatar={faker.image.avatar()}
-            />
-            <CommentDetail
-                author="Celesté"
-                timeAgo="Monday at 09:00"
-                content="Are You"
-                avatar={faker.image.avatar()}
-            />
-            <CommentDetail
-                author="Ruan"
-                timeAgo="Today at 06:00"
-                content="Ready?"
-                avatar={faker.image.avatar()}
-            />
+            <ApprovalCard>
+                <div>
+                    <h4>Ready?</h4>
+                    Hello React-World!
+                </div>
+            </ApprovalCard>
+
+            <ApprovalCard>
+                <CommentDetail
+                    author="Conrad"
+                    timeAgo="Today at 16:00"
+                    content="Hello"
+                    avatar={faker.image.avatar()}
+                />
+            </ApprovalCard>
+
+            <ApprovalCard>
+                <CommentDetail
+                    author="Phil"
+                    timeAgo="Today at 16:30"
+                    content="React"
+                    avatar={faker.image.avatar()}
+                />
+            </ApprovalCard>
+
+            <ApprovalCard>
+                <CommentDetail
+                    author="Mariaan"
+                    timeAgo="Yesterday at 12:00"
+                    content="World!"
+                    avatar={faker.image.avatar()}
+                />
+            </ApprovalCard>
+
+            <ApprovalCard>
+                <CommentDetail
+                    author="Celesté"
+                    timeAgo="Monday at 09:00"
+                    content="Are You"
+                    avatar={faker.image.avatar()}
+                />
+            </ApprovalCard>
+
+            <ApprovalCard>
+                <CommentDetail
+                    author="Ruan"
+                    timeAgo="Today at 06:00"
+                    content="Ready?"
+                    avatar={faker.image.avatar()}
+                />
+            </ApprovalCard>
+
         </div>
     );
 };

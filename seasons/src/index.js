@@ -5,12 +5,28 @@ if (module.hot) {
     module.hot.accept();
 }
 class App extends React.Component {
-    render() {
+    constructor(props) {
+        super(props);
+
+        //THIS IS THE ONLY TIME we do direct assignment to
+        // this.state!!!
+        this.state = { lat: null };
+
         window.navigator.geolocation.getCurrentPosition(
-            (position) => console.log(position),
-            (err) => console.log(err)
+            position => {
+                //Called state!
+                this.setState({ lat: position.coords.latitude });
+
+                //WE DID NOT!!!
+                // this.state.lat = position.coords.latitude
+            },
+            err => console.log(err)
         );
-        return <div>Latitude: </div>;
+    }
+
+    // React requires render!
+    render() {
+        return <div>Latitude: {this.state.lat}</div>;
     }
 }
 

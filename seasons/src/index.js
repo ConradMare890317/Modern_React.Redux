@@ -1,13 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import SeasonDisplay from './SeasonDisplay';
+import React from "react";
+import ReactDOM from "react-dom";
+import SeasonDisplay from "./SeasonDisplay";
+import Spinner from "./Spinner";
 
 if (module.hot) {
     module.hot.accept();
 }
 
 class App extends React.Component {
-    state = { lat: null, errorMessage: '' };
+    state = { lat: null, errorMessage: "" };
 
     componentDidMount() {
         window.navigator.geolocation.getCurrentPosition(
@@ -16,20 +17,22 @@ class App extends React.Component {
         );
     }
 
+    // React says we have to define render!!
     render() {
         if (this.state.errorMessage && !this.state.lat) {
             return <div>Error: {this.state.errorMessage}</div>;
         }
 
         if (!this.state.errorMessage && this.state.lat) {
-            return <SeasonDisplay lat={this.state.lat} />
+            return <SeasonDisplay lat={this.state.lat} />;
         }
 
-        return <div>Loading!</div>;
+        return <Spinner />;
     }
 }
 
-ReactDOM.render(<App />, document.querySelector('#root'));
+ReactDOM.render(<App />, document.querySelector("#root"));
+
 
 
 // GeoLocation API = "developer.mozilla.org/en-US/docs/Web/API/Geolocation_API/"

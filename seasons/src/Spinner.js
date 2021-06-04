@@ -1,11 +1,15 @@
 import React from 'react';
 
-const Spinner = () => {
+const Spinner = (props) => {
     return (
         <div className="ui active dimmer">
-            <div className="ui massive text loader">Choose one, Dumb.Dumb!!...</div>
+            <div className="ui indeterminate text loader">{props.message}</div>
         </div>
     );
 };
+
+Spinner.defaultProps = {
+    message: 'Loading...'
+}
 
 export default Spinner;

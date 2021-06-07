@@ -12,11 +12,11 @@ class App extends React.Component {
         });
 
         this.setState({ images: response.data.results });
-    }
+    };
 
     render() {
         return (
-            <div className="ui container" style={{ marginTop: '20px' }}>
+            <div className="ui container" style={{ marginTop: '15px' }}>
                 <SearchBar onSubmit={this.onSearchSubmit} />
                 <ImageList images={this.state.images} />
             </div>

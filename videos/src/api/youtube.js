@@ -9,7 +9,7 @@ export default axios.create({
     params: {
         part: "snippet",
         type: "video",
-        maxResults: 5,
+        maxResults: 17,
         key: KEY,
     },
 });

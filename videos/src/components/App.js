@@ -8,7 +8,7 @@ class App extends React.Component {
     state = { videos: [], selectedVideo: null };
 
     componentDidMount() {
-        this.onTermSubmit("Trivium");
+        this.onTermSubmit('React/Redux');
     }
 
     onTermSubmit = async (term) => {

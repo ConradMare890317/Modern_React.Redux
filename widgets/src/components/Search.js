@@ -20,12 +20,20 @@ const Search = () => {
       setResults(data.query.search);
     };
 
-    const timeoutId = setTimeout(() => {
-      if (term) {
-        search();
-      }
-    }, 500);
-  }, [term]);
+    if (term && !results.length) {
+      search();
+    } else {
+      const timeoutId = setTimeout(() => {
+        if (term) {
+          search();
+        }
+      }, 1000);
+
+      return () => {
+        clearTimeout(timeoutId);
+      };
+    }
+  }, [term, results.length]);
 
   const renderedResults = results.map((result) => {
     return (
@@ -35,7 +43,7 @@ const Search = () => {
             className="ui button"
             href={`https://en.wikipedia.org?curid=${result.pageid}`}
           >
-            Go
+            Select
           </a>
         </div>
         <div className="content">
@@ -50,7 +58,7 @@ const Search = () => {
     <div>
       <div className="ui form">
         <div className="field">
-          <label>Enter Search Term</label>
+          <label>Search</label>
           <input
             value={term}
             onChange={(e) => setTerm(e.target.value)}

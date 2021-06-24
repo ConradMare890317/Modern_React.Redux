@@ -8,7 +8,7 @@ class App extends React.Component {
     state = { videos: [], selectedVideo: null };
 
     componentDidMount() {
-        this.onTermSubmit('Norma Jean-A media friendly turn for the worst(Lyric video)');
+        this.onTermSubmit('Good Will Hunting-"My Boys Wicked Smart" (HD)');
     }
 
     onTermSubmit = async (term) => {

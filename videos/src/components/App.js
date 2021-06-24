@@ -8,7 +8,7 @@ class App extends React.Component {
     state = { videos: [], selectedVideo: null };
 
     componentDidMount() {
-        this.onTermSubmit('Good Will Hunting-"My Boys Wicked Smart" (HD)');
+        this.onTermSubmit('The Hollies - Long Cool Woman (In a Black Dress) (Official Audio)');
     }
 
     onTermSubmit = async (term) => {
@@ -37,7 +37,7 @@ class App extends React.Component {
                         <div className="eleven wide column">
                             <VideoDetail video={this.state.selectedVideo} />
                         </div>
-                        <div className="five wide column">
+                        <div className="center box flex column">
                             <VideoList
                                 onVideoSelect={this.onVideoSelect}
                                 videos={this.state.videos}

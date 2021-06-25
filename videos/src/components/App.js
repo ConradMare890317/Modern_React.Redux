@@ -5,49 +5,50 @@ import VideoList from "./VideoList";
 import VideoDetail from "./VideoDetail";
 
 class App extends React.Component {
-    state = { videos: [], selectedVideo: null };
+  state = { videos: [], selectedVideo: null };
 
-    componentDidMount() {
-        this.onTermSubmit('The Hollies - Long Cool Woman (In a Black Dress) (Official Audio)');
-    }
+  componentDidMount() {
+    this.onTermSubmit('The Art of Code');
+  }
 
-    onTermSubmit = async (term) => {
-        const response = await youtube.get("/search", {
-            params: {
-                q: term,
-            },
-        });
+  onTermSubmit = async (term) => {
+    const response = await youtube.get("/search", {
+      params: {
+        q: term,
+      },
+    });
 
-        this.setState({
-            videos: response.data.items,
-            selectedVideo: response.data.items[0],
-        });
-    };
+    this.setState({
+      videos: response.data.items,
+      selectedVideo: response.data.items[0],
+    });
+  };
 
-    onVideoSelect = (video) => {
-        this.setState({ selectedVideo: video });
-    };
+  onVideoSelect = (video) => {
+    this.setState({ selectedVideo: video });
+  };
 
-    render() {
-        return (
-            <div className="ui container">
-                <SearchBar onFormSubmit={this.onTermSubmit} />
-                <div className="ui grid">
-                    <div className="ui row">
-                        <div className="eleven wide column">
-                            <VideoDetail video={this.state.selectedVideo} />
-                        </div>
-                        <div className="center box flex column">
-                            <VideoList
-                                onVideoSelect={this.onVideoSelect}
-                                videos={this.state.videos}
-                            />
-                        </div>
-                    </div>
-                </div>
+  render() {
+    return (
+      <div className="ui center-aligned container">
+        <SearchBar onFormSubmit={this.onTermSubmit} />
+        <div className="ui grid">
+          <div className="ui row">
+            <div className="eleven wide column">
+              <VideoDetail video={this.state.selectedVideo}
+              />
+              <div className="five wide column">
+                <VideoList
+                  onVideoSelect={this.onVideoSelect}
+                  videos={this.state.videos}
+              />
             </div>
-        );
-    }
+          </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;

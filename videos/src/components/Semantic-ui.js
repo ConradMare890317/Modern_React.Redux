@@ -1,10 +1,17 @@
 import React from 'react'
-import { Button, Icon } from 'semantic-ui-react'
+import { Icon, Label } from 'semantic-ui-react'
 
-const ButtonExampleIcon = () => (
-  <Button icon>
-    <Icon name='search' />
-  </Button>
+const LabelExampleIcon = () => (
+  <div>
+    <Label as='a'>
+      <Icon name='mail' />
+      Mail
+    </Label>
+    <Label as='a'>
+      Tag
+      <Icon name='delete' />
+    </Label>
+  </div>
 )
 
-export default ButtonExampleIcon
+export default LabelExampleIcon

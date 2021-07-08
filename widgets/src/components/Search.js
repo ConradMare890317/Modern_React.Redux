@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const Search = () => {
-  const [term, setTerm] = useState('programming');
+  const [term, setTerm] = useState('Mandelbrot');
   const [debouncedTerm, setDebouncedTerm] = useState(term);
   const [results, setResults] = useState([]);
 
@@ -56,7 +56,7 @@ const Search = () => {
     <div>
       <div className="ui form">
         <div className="field">
-          <label>Enter Search Term</label>
+          <label>Search Term</label>
           <input
             value={term}
             onChange={(e) => setTerm(e.target.value)}

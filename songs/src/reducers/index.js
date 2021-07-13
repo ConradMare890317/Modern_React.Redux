@@ -5,7 +5,7 @@ const songsReducer = () => {
     { title: 'All Apologies', duration: '4:05' },
     { title: 'Evenflow', duration: '2:30' },
     { title: 'Fade to Black', duration: '5:20' },
-    { title: 'No Scrubs', duration: '3:10' }
+    { title: 'Comfortably Numb', duration: '6:10' }
   ];
 };
 

@@ -8,16 +8,16 @@ import Header from "./components/Header";
 
 const items = [
   {
-    title: "What is React?",
-    content: "React is a front end javascript framework",
+    title: "Meaning of 'Lorem Ipsum'?",
+    content: "Latin phrase, used as 'dummy' text for a placeholder.",
   },
   {
-    title: "Why use React?",
-    content: "React is a favorite JS library among engineers",
+    title: "The actual Latin phrase...",
+    content: "'Dolorem ipsum, quia dolor sit amet consectetur adipisci velit...",
   },
   {
-    title: "How do you use React?",
-    content: "You use React by creating components",
+    title: "Meaning?",
+    content: "' Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but occasionally circumstances occur in which toil and pain can procure him some great pleasure.'",
   },
 ];
 

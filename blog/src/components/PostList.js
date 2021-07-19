@@ -12,13 +12,14 @@ class PostList extends React.Component {
     return this.props.posts.map(post => {
       return (
         <div className="item" key={post.id}>
-          <i className="large middle aligned icon user" />
+          <i className="large middle aligned icon user circle" />
           <div className="content">
+            <UserHeader userId={post.userId} />
             <div className="description">
-              <h2>{post.title}</h2>
+              <h4>{post.title}</h4>
               <p>{post.body}</p>
             </div>
-            <UserHeader userId={post.userId} />
+            
           </div>
         </div>
       );
